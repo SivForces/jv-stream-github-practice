@@ -124,13 +124,14 @@ public class StreamPractice {
     public static class CandidateValidator implements Predicate<Candidate> {
         private static final int AGE = 35;
         private static final int LIVPERIOD = 10;
+        private static final String NATION = "Ukrainian";
 
         @Override
         public boolean test(Candidate c) {
-            if (c.getAge() <= AGE) {
+            if (c.getAge() < AGE) {
                 return false;
             }
-            if (!"Ukrainian".equals(c.getNationality())) {
+            if (!NATION.equals(c.getNationality())) {
                 return false;
             }
             if (!c.isAllowedToVote()) {
